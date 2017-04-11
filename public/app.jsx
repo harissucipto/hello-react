@@ -24,6 +24,6 @@ var firstName = 'Haris';
 var inputMessage = 'Halo selamat datang';
 
 ReactDOM.render(
-  <Greater />, // passing to render
+  <Greater name={firstName} message={inputMessage}/>, // passing data to props and render
   document.getElementById('app') // location to render
 );
