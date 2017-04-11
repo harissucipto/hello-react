@@ -1,0 +1,9 @@
+
+# exclude all file in node modules
+/node_modules/*
+
+# exclude all short memory file
+*.*~
+
+# exclude all ternjs file
+.tern-project
