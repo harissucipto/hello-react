@@ -3,7 +3,7 @@ var express = require('express');
 // Create our app
 var app = express();
 
-// specifiy folder to use for default path
+// specifiy folder to use for default path to read
 app.use(express.static('public'));
 
 // port to launch
