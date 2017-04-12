@@ -1,7 +1,7 @@
 # Belajar React JS
 
 Sebuah Repo yang berguna bagi pemula untuk memahami bagaimana cara menggunakan
-reactJS.
+reactJS dalam studi kasus contoh membuat aplikasi hello <yourName> dan pesan
 
 
 ## Cara pakai:

@@ -16,20 +16,38 @@ var GreaterForm = React.createClass({
     onFormSubmit: function(e) {
       e.preventDefault();
 
+
+      var updates = {};
       var name = this.refs.name.value;
+      var message = this.refs.message.value;
+
 
       if (name.length > 0) {
         this.refs.name.value = '';
-        this.props.onNewName(name);
+        updates.name = name;
       }
+
+      if (message.length > 0) {
+        this.refs.message.value = '';
+        updates.message = message;
+      }
+
+      this.props.onNewData(updates);
 
     },
     render: function() {
       return (
           <div>
             <form onSubmit={this.onFormSubmit}>
-              <input type="text" ref="name"/>
-              <button>Set Name</button>
+              <div>
+                <input type="text" ref="name" placeholder="Enter name"/>
+              </div>
+              <div>
+                <textarea  ref="message" placeholder="Enter Message"/>
+              </div>
+              <div>
+                <button>Submit</button>
+              </div>
             </form>
           </div>
       );
@@ -50,10 +68,8 @@ var Greater = React.createClass({
       message: this.props.message
     };
   },
-  handleNewName: function(name) {
-    this.setState({
-      name: name
-    });
+  handleNewData: function(updates) {
+    this.setState(updates);
   },
   render: function() {
     // ambil data dari state
@@ -64,7 +80,7 @@ var Greater = React.createClass({
     return (
       <div>
         <GreaterMessage name={name} message={message}/>
-        <GreaterForm onNewName={this.handleNewName}/>
+        <GreaterForm onNewData={this.handleNewData}/>
       </div>
     );
   }
