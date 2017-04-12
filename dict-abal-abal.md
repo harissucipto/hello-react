@@ -1,5 +1,5 @@
 ## Kamus abal abal
-```
+---
 **cara bikin server:**
 
 * ini dulu npm
@@ -10,7 +10,8 @@
 
 * sisanya liat source code
 
-
+---
+dalam jsx kode javascript di wrap dengan tanda {kode javascript}
 ---
 **props** adalah properti data yang kita passing lewat attribut pada element
 sebuah react element dimana kita bisa mengakses lewat object this.props.namaAttribut

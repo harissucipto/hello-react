@@ -1,19 +1,33 @@
 var GreaterMessage = React.createClass({
     render: function() {
+      var name = this.props.name;
+      var message = this.props.message;
+
       return (
         <div>
-          <h1>Some H1</h1>
-          <p>Some paragraph</p>
+          <h1>Hello {name}!</h1>
+          <p>{message}!!</p>
         </div>
       );
     }
 });
 
 var GreaterForm = React.createClass({
+    onFormSubmit: function(e) {
+      e.preventDefault();
+
+      var name = this.refs.name.value;
+
+      if (name.length > 0) {
+        this.refs.name.value = '';
+        this.props.onNewName(name);
+      }
+
+    },
     render: function() {
       return (
           <div>
-            <form>
+            <form onSubmit={this.onFormSubmit}>
               <input type="text" ref="name"/>
               <button>Set Name</button>
             </form>
@@ -32,44 +46,25 @@ var Greater = React.createClass({
   },
   getInitialState: function() {
     return {
-      name: this.props.name
+      name: this.props.name,
+      message: this.props.message
     };
   },
-  onButtonClick: function(e) {
-    e.preventDefault();   /* mencegah browser mereload semua jika form di submit */
-
-    var nameRef = this.refs.name;
-
-    var name = nameRef.value;
-    nameRef.value = ''; // kosongkan kolom setelah diisi
-
-    if (typeof name === 'string' && name.length > 0) {
-      // ubah data setState
-      this.setState({
-        name: name
-      });
-    }
-
+  handleNewName: function(name) {
+    this.setState({
+      name: name
+    });
   },
   render: function() {
-    // ambil data dari props
+    // ambil data dari state
     var name = this.state.name;
-    var message = this.props.message;
+    var message = this.state.message;
 
     // apa yang akan dirender
     return (
       <div>
-        <h1>Hello {name}!</h1>
-        <p>{message + '!!!'}</p>
-
-        <GreaterMessage/>
-
-        <form onSubmit={this.onButtonClick}>
-          <input type="text" ref="name" />
-          <button>Set Name</button>
-        </form>
-
-        <GreaterForm />
+        <GreaterMessage name={name} message={message}/>
+        <GreaterForm onNewName={this.handleNewName}/>
       </div>
     );
   }
