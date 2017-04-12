@@ -1,10 +1,11 @@
 # Belajar React JS
-cara bikin server:
 
-* ini dulu npm
-```npm init```
+Sebuah Repo yang berguna bagi pemula untuk memahami bagaimana cara menggunakan
+reactJS.
 
-* misalnya pakai express versi 4 lalu diembedkan (--save) ke pengaturan packge.json dengan perintah ini
-```npm install express@4 --save ```
 
-* sisanya liat source code
+## Cara pakai:
+* Tiap Commit mengandung langkah - langkah bagaimana cara penerapanya
+* Cek file **dict-abal-abal.md** untuk mengetahui beberapa instilah yang kurang paham
+* setiap checkout pada log lakuakn ``npm install`` agar node module dapat dijalankan
+* setelah ada node module barulah bisa menjalankan perintah dengan cara ```node server.js```

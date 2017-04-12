@@ -1,4 +1,15 @@
 ## Kamus abal abal
+```
+**cara bikin server:**
+
+* ini dulu npm
+```npm init```
+
+* misalnya pakai express versi 4 lalu diembedkan (--save) ke pengaturan packge.json dengan perintah ini
+```npm install express@4 --save ```
+
+* sisanya liat source code
+
 
 ---
 **props** adalah properti data yang kita passing lewat attribut pada element
@@ -44,7 +55,7 @@ event yang berguna buat ketika tombol disubmit
 
 **ref="namaAttribut"**
 attribut pada input yang berguna agar bisa dibaca react contohnya baca value
-cara mengaksesnya this.refs.name.value
+cara mengaksesnya ```this.refs.name.value```
 
 
 ---
@@ -62,3 +73,9 @@ this.setState({
   name: name // contoh
 });
 ```
+
+---
+**hal penting ketika membuat nested component yaitu**:
+1. Presentation component lebih baik tidak menghandle State
+Karena PC bergantung pada parent (Contener component)yang akan menghandle nya
+2. Contener component maintaint sebuah state
