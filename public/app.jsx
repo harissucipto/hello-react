@@ -1,3 +1,28 @@
+var GreaterMessage = React.createClass({
+    render: function() {
+      return (
+        <div>
+          <h1>Some H1</h1>
+          <p>Some paragraph</p>
+        </div>
+      );
+    }
+});
+
+var GreaterForm = React.createClass({
+    render: function() {
+      return (
+          <div>
+            <form>
+              <input type="text" ref="name"/>
+              <button>Set Name</button>
+            </form>
+          </div>
+      );
+    }
+});
+
+
 var Greater = React.createClass({
   getDefaultProps: function() { // deklarasikan default props jika tidak ada passsing data maka pakai ini nilai defaultnya
     return {
@@ -37,10 +62,14 @@ var Greater = React.createClass({
         <h1>Hello {name}!</h1>
         <p>{message + '!!!'}</p>
 
+        <GreaterMessage/>
+
         <form onSubmit={this.onButtonClick}>
           <input type="text" ref="name" />
           <button>Set Name</button>
         </form>
+
+        <GreaterForm />
       </div>
     );
   }
