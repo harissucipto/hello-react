@@ -4,6 +4,8 @@ Sebuah Repo yang berguna bagi pemula untuk memahami bagaimana cara menggunakan
 reactJS dalam studi kasus contoh membuat aplikasi hello <yourName> dan pesan
 
 
+<img src="ss.jpeg" style="margin: 50px;">
+
 ## Cara pakai:
 * Tiap Commit mengandung langkah - langkah bagaimana cara penerapanya
 * Cek file **dict-abal-abal.md** untuk mengetahui beberapa instilah yang kurang paham
