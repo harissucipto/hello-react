@@ -3,18 +3,32 @@ var Greater = React.createClass({
     return {
       name: 'React',
       message: 'This is from a component'
-    }
+    };
+  },
+  getInitialState: function() {
+    return {
+      name: this.props.name
+    };
   },
   onButtonClick: function(e) {
     e.preventDefault();   /* mencegah browser mereload semua jika form di submit */
 
-    var name = this.refs.name.value;    // akses ke attribut refs
+    var nameRef = this.refs.name;
 
-    alert(name);
+    var name = nameRef.value;
+    nameRef.value = ''; // kosongkan kolom setelah diisi
+
+    if (typeof name === 'string' && name.length > 0) {
+      // ubah data setState
+      this.setState({
+        name: name
+      });
+    }
+
   },
   render: function() {
     // ambil data dari props
-    var name = this.props.name;
+    var name = this.state.name;
     var message = this.props.message;
 
     // apa yang akan dirender
@@ -24,7 +38,7 @@ var Greater = React.createClass({
         <p>{message + '!!!'}</p>
 
         <form onSubmit={this.onButtonClick}>
-          <input type="text" ref="name" />    
+          <input type="text" ref="name" />
           <button>Set Name</button>
         </form>
       </div>

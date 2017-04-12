@@ -45,3 +45,20 @@ event yang berguna buat ketika tombol disubmit
 **ref="namaAttribut"**
 attribut pada input yang berguna agar bisa dibaca react contohnya baca value
 cara mengaksesnya this.refs.name.value
+
+
+---
+**state**
+dua tipe data dalam komponen yaitu :
+
+1. props (seperti penjelasan sebelumnya yakni passing data bisa menentukan default data juga)
+2. state (merupakan data yang di maintain secara internal langsung oleh komponent
+dan bisa diupdate melalui komponent )
+
+
+**merubah data state saat  event dijalankan bisa pakai ini**
+```js
+this.setState({
+  name: name // contoh
+});
+```
