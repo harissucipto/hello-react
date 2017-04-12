@@ -33,3 +33,15 @@ getDefaultProps: function() { // default props jika tidak ada passsing data maka
   }
 },
 ```
+
+
+----
+**e.preventDefault()**
+mencegah reload semua ulang ketika event di klik berguna bagi spa.
+
+**onSubmit={this.namaEventYangDipanggil}**
+event yang berguna buat ketika tombol disubmit
+
+**ref="namaAttribut"**
+attribut pada input yang berguna agar bisa dibaca react contohnya baca value
+cara mengaksesnya this.refs.name.value
